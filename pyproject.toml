@@ -1,16 +1,27 @@
 [build-system]
-requires = ["maturin>=1.4,<2.0"]
-build-backend = "maturin"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [project]
-name = "python-maturin-cedar"
-requires-python = ">=3.8"
+name = "test-maturin-cedar"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dynamic = ["version"]
+version = "0.1.0"
+description = "cedar-policy bindings"
+authors = [
+    {name = "Naoya Yamashita", email = "conao3@gmail.com"},
+]
+dependencies = []
+readme = "README.md"
+license = {text = "Apache-2.0"}
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
+
+[tool.pdm]
+package-type = "library"
